@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Hogwarts",
+  "version": "1.0",
+  "description": "Momentum Extension by Meruert Amambayeva",
+
+  
+    "chrome_url_overrides": {
+      "newtab": "momentum.html"
+    }
+
+
+}
