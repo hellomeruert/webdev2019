@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Magical Momentum</title>
+        <div id="clock"></div>
+        <link rel="stylesheet" href="style.css">
+    <body style="background-image: 
+    url(https://images.unsplash.com/photo-1549068880-277fc8252261?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1601&q=80);">
+    <div class="overlay">
+            <div id="lblMessage"></div>
+        <h1>Hello, Meruert</h1>
+        <p id="par">What is your main focus for today?</p>
+        <div id="container">
+                <input id ="userInput" type="text" placeholder="New Task" >
+                <input type="submit" id="add_button" value="Add"></button>
+                <ul id = "list">
+            </form>
+        </div>
+    </div>
+    <div class="quotes"></div>
+        <script src="script.js"></script>
+    </div>
+        <div>
+        <link href="style.css" type="text/css" rel="stylesheet">
+        </div>
+     </div>
+     <script>
+            var x = document.getElementById("demo");
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+              }
+            }
+            
+            function showPosition(position) {
+              x.innerHTML = "Latitude: " + position.coords.latitude + 
+              "<br>Longitude: " + position.coords.longitude; 
+            }
+            </script>
+	<style type="text/css">
+		.bg {background-attachment:fixed; background-repeat: no-repeat;}
+    </style>
+    </body>   
+</html>
