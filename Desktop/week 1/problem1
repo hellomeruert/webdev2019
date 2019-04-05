@@ -1,0 +1,45 @@
+.data
+
+prompt1:.asciiz "What is your name? "
+prompt2:.asciiz "What is your age? "
+prompt3:.asciiz "You will be "
+prompt4:.asciiz " years old in four years."
+name:.space 50
+length:.word 50
+age:.word 0
+
+.text
+li $v0,4
+la $a0,prompt1
+syscall
+			
+li $v0,8
+la $a0,name
+la $a1,length
+syscall
+
+li $v0,4
+la $a0,prompt2
+syscall
+
+li $v0,5
+syscall
+addi $t0,$v0,4
+sw $t0,age
+			
+li $v0,4
+la $a0,prompt3
+syscall
+
+li $v0,1
+lw  $a0,age
+syscall
+
+li $v0,4
+la $a0,prompt4
+syscall
+			
+li $v0,10
+syscall
+
+
