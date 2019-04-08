@@ -1,0 +1,16 @@
+<h1>TASK LISTS</h1>
+
+<div class="lists" >
+  <div  *ngFor="let t of taskLists" 
+  (click)="getTasks(t)"><li>{{t.name}}</li></div>
+</div>
+<div class="tasks">
+  <ng-container *ngIf="!loading">
+    <p>Task list is empty</p>
+  </ng-container>
+  <ng-container *ngIf="loading">
+    <div *ngFor="let t of tasks"><li><p>____{{t.name}}____</p>
+      <p>status: {{t.status}}~</p><p>created at:{{t.created_at}}</p>
+      <p>due on:{{t.due_on}}</p></li></div>
+</ng-container>
+</div>
