@@ -1,16 +1,36 @@
-<h1>TASK LISTS</h1>
 
-<div class="lists" >
-  <div  *ngFor="let t of taskLists" 
-  (click)="getTasks(t)"><li>{{t.name}}</li></div>
+
+<h1>Task Lists<img src="https://apprecs.org/gp/images/app-icons/300/8a/io.tinbits.memorigi.jpg" width=80px></h1>
+<div style=" display: inline;  white-space: nowrap;">
+  ADD NEW TASK LIST:
+  <input type="text" [(ngModel)]="name" placeholder="Name"/>
+  <img id="yes" (click)="createList()" (mouseenter)="mouseOn(1)" (mouseleave)="mouseOff(1)" src="../../assets/add.png" width="40" style="position: relative; top:10px;">
+</div>
+<br>
+<br>
+<br>
+<div style="display: inline;">
+  <img id="ar1" src="../../assets/arrow2.png" width=70px>
+  <div  class="lists" >
+    <div  *ngFor="let t of taskLists" (click)="getTasks(t)" >
+      <li id={{t.name}}> {{t.name}}
+        
+        <img  (click)="deleteList(t)" class="func" src="../../assets/delete.png" width=28>
+        <img  (click)="updateList(t)" class="func" src="../../assets/update.png" width=25>
+        
+      </li>
+      <input class ="update" id="{{t.id}}" type="text" [(ngModel)]="updated_name" style="visibility:hidden;" placeholder="New Name"></div>
+    </div>
+    <img id="ar2" src="../../assets/arrow.png" width=70px>
+  </div>
+  <div style="position: relative;top:-150px;"><ng-container *ngIf="newTask" >
+      <div style=" display: inline;  white-space: nowrap;">
+          ADD NEW TASK:
+          <input type="text" [(ngModel)]="task_name" placeholder="Name"/>
+          <img id="yes2" (click)="createTask()" (mouseenter)="mouseOn(2)" (mouseleave)="mouseOff(2)" src="../../assets/add.png" width="40" style="position: relative; top:10px;">
+        </div>
+  </ng-container>
 </div>
 <div class="tasks">
-  <ng-container *ngIf="!loading">
-    <p>Task list is empty</p>
-  </ng-container>
-  <ng-container *ngIf="loading">
-    <div *ngFor="let t of tasks"><li><p>____{{t.name}}____</p>
-      <p>status: {{t.status}}~</p><p>created at:{{t.created_at}}</p>
-      <p>due on:{{t.due_on}}</p></li></div>
-</ng-container>
+    <div *ngFor="let t of tasks"><li><p>{{t.name}}</p><p>~{{t.status}}~</p><p>Created at: {{t.created_at}}</p><p>Due on: {{t.due_on}}</p></li></div>
 </div>

@@ -1,0 +1,20 @@
+
+<h1>To Do List</h1>
+<div style=" display: inline;  white-space: nowrap;">
+  <div id="nt" >New Task List</div><br> 
+  <input type="text" [(ngModel)]="name" placeholder="Name"/>
+  <img id="yes" (click)="createTaskList()"  src="../../assets/add.png" width="40" style="position: relative; top:10px;">
+</div>
+<div style="display: inline;">
+  <div  class="lists" >
+    <div  *ngFor="let t of taskLists" (click)="getTasks(t)" >
+      <li id={{t.name}}> {{t.name}}
+        
+        <img  (click)="updateTaskList(t)" class="func" src="../../assets/update.png" width=25>
+        <img  (click)="deleteTaskList(t)" class="func" src="../../assets/delete.png" width=29>
+        
+      </li>
+      <input class ="update" id="{{t.id}}" type="text" [(ngModel)]="update" style="visibility:hidden;" placeholder="New Name"></div>
+    </div>
+  </div>
+
