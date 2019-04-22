@@ -14,7 +14,7 @@ export class ProviderService extends ExService {
      return this.get(`http://127.0.0.1:8000/api/task_lists/`,{});
    }
    getExactList(id: number): Promise<TaskList>{
-     return this.get(`http://127.0.0.1:8000/api/task_lists/${id}/`,{id});
+     return this.get(`http://localhost:8000/api/task_lists/${id}/`,{id});
    }
    getTasks(id: number): Promise<Task[]> {
     return this.get(`http://127.0.0.1:8000/api/task_lists/${id}/tasks/`, {id});

@@ -1,0 +1,50 @@
+<div>
+  <ng-container *ngIf="!logged">
+      <h1>Task Lists</h1>
+      <div class="auth">
+      <div class="regist">Authentication 
+      <br><br>
+      <label style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" for="username">Username</label>            
+      <input type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
+      <label for="password">Password</label>
+      <input id="password" type="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+      <input id="but" type="submit" value="Log In" (click)="logIn()"></div></div>
+  </ng-container>
+  <ng-container *ngIf="logged">   
+    <br>
+    <h1>Task List
+    </h1>
+    <div style=" display: inline;  white-space: nowrap;">
+     
+      New Task List:
+      <input type="text" [(ngModel)]="name" placeholder="Name"/>
+      <img id="yes" (click)="createList()" src="../../assets/add.png" width="40" style="position: relative; top:10px;">
+    </div>
+    <br>
+    <br>
+    <br>
+    <div style="display: inline;">
+      <br>>
+      <div  class="lists" >
+        <div  *ngFor="let t of taskLists" (click)="getTasks(t)" >
+          <li id={{t.name}}> {{t.name}}
+            <img  (click)="updateList(t)" class="func" src="../../assets/update.png" width=30>
+            <img  (click)="deleteList(t)" class="func" src="../../assets/delete.png" width=30>
+          </li>
+          <input class ="update" id="{{t.id}}" type="text" [(ngModel)]="updated_name" style="visibility:hidden;" placeholder="New Name"></div>
+        </div>
+       <br><br><br>
+      </div>
+      <div style="position: fixed;left:700px; top:120px;">
+          <div style=" display: inline;  white-space: nowrap; ">
+              New Task:
+              <input type="text" [(ngModel)]="task_name" placeholder="Name"/>
+              <img id="yes2" (click)="createTask()" src="../../assets/add.png" width="40" style="position: relative; top:10px;">
+            </div>
+    </div>
+    <div style="position: relative;" class="tasks">
+        <div *ngFor="let t of tasks"><li><p>{{t.name}}</p><p>{{t.status}}</p><p>created at: {{t.created_at}}</p><p>due on: {{t.due_on}}</p></li></div>
+    </div>
+    <button (click)="logout()">Log Out</button>
+  </ng-container>
+  </div>

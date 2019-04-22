@@ -1,0 +1,134 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("https://images.unsplash.com/photo-1529717730488-7a2492983b2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+    color:rgb(255, 255, 255);
+    font-weight: 300;
+}
+.lists li:hover{
+    opacity: 0.8;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.lists, .tasks{
+    width:85%;
+    display: flex;
+    overflow-x: scroll;
+    text-align: center;
+    align-items: center;  
+    position: relative;
+    color:black;
+    top:-5px;    
+}
+
+input{
+    width:400px;
+    border-radius: 5px;
+    border:1px solid lightgrey;
+    padding:10px;
+    margin: 10px;
+    font-size:25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:black;
+
+}
+::placeholder{
+    color:black;
+}
+li{
+    list-style: none;
+    border-radius: 5px;
+    border:1px solid lightgrey;
+    padding:10px;
+    margin: 10px;
+    font-size:25px;
+    flex-direction: column;
+    background-color: thistle;
+   
+    
+}
+.func{
+    float: right;
+    padding:0px;
+    margin-right: 5px;
+}
+.func:hover{
+    opacity: 0.6;
+}
+*:focus{
+    outline: none;
+}
+.lists li, .auth input{
+    width:300px;
+}
+.tasks li{
+    
+    width:400px;
+    height: 130px;
+   background-color: darkkhaki;
+
+}
+li p{
+    margin: 5px;
+    width: 400px;
+    word-wrap: break-word;
+	word-break: break-all;
+}
+h1{
+    font-size: 80px;
+    margin:0px;
+    text-align: center;
+    white-space: nowrap;
+    min-width: 1000px;
+    position: relative;
+    top:-10px;
+
+}
+.tasks{
+    width: 90%;
+    left: 10px;
+    color:black;
+  
+}
+img{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.auth{
+    display: flex;
+    justify-content: center;
+    
+    min-width: 973px;
+}
+.auth input:hover{
+    box-shadow: 0px 0px 15px white
+}
+.regist{
+    font-size: 20px;
+    padding:40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:nowrap;
+    text-align: center;
+    width:450px;
+    justify-items: center;
+    align-items: center;
+    border-radius: 7px;
+}
+button{
+    background-color: cadetblue;
+    width:200px;
+    border-radius: 5px;
+    padding:10px;
+    margin: 10px;
+    font-size:20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:white;
+    
+}
+button:hover{
+    width: 210px;
+}
+
+
