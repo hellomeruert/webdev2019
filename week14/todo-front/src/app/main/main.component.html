@@ -1,0 +1,66 @@
+<div style="min-height: 840px; padding-left: 10px;">
+  <ng-container *ngIf="!logged">
+      <h1>Task Lists</h1>
+      <div class="auth">
+        <div class="regist" >Authentication 
+          <br><br>
+          <label style="font-family: 'Gruppo';" for="username">Username</label>
+          <input type="text" id="username" [(ngModel)]="login" [ngModelOptions]="{standalone:true}"/>
+          <label for="password">Password</label>
+          <input id="password" type="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}"/>
+          <input id="but" type="submit" value="Log In" (click)="logIn()">
+        </div>
+      </div>
+  </ng-container>
+
+  <ng-container *ngIf="logged">
+      <h1>Task Lists</h1>
+     
+      <div style=" display: inline;  white-space: nowrap;">
+        NEW TASK LIST:
+        <input type="text" [(ngModel)]="name" placeholder="Name"/>
+        <img id="yes" (click)="createList()"   src="../../assets/add.png" width="40" style="position: relative; top:10px;">
+      </div>
+      <br>
+      ITEMS SEARCH:
+      <input type="text" [(ngModel)]="search_list"><button (click)="searching()">Search</button>
+
+      <br><br><br>
+      <div style="display: inline;">
+       
+        <div  class="lists" >
+          <div  *ngFor="let t of taskLists"  >
+            <li id={{t.name}} > {{t.name}}<button (click)="getTasks(t)" style="width: 40px; text-align: center">T</button>
+            <img  (click)="deleteList(t)" class="a" src="../../assets/delete.png" width=28>
+            <img  (click)="updateList(t)" class="a" src="../../assets/update.png" width=25>
+            </li>
+
+            <input class ="update" id="{{t.id}}" type="text" [(ngModel)]="updated_name" style="visibility:hidden;" placeholder="New Name">
+          </div>
+        </div>
+    
+      </div>
+      <ng-container *ngIf="check">
+        <div>
+          <div style=" display: inline;  white-space: nowrap;">
+            ADD NEW TASK:
+            <input type="text" [(ngModel)]="task_name" placeholder="Name"/>
+            <img id="yes2" (click)="createTask()"  src="../../assets/add.png" width="40" style="position: relative; top:10px;">
+          </div>
+          <br>
+          ITEMS FILTER: <input type="text" [(ngModel)]="search"><button (click)="filter()">Filter</button>
+          <br>
+
+        </div>
+        <div class="tasks">
+          <div *ngFor="let t of tasks">
+            <li><p>Name:{{t.name}}</p><p>Status:{{t.status}}</p><p>Created at: {{t.created_at}}</p><p>Due on: {{t.due_on}}</p></li>
+          </div>
+        </div>
+   
+      </ng-container>
+      <br><br><br>
+      <button (click)="logout()">Log Out</button>
+  </ng-container>
+</div>
+
